@@ -57,7 +57,7 @@ body {
     display: flex;
 }
 
-.menu .navbar ul li a {
+.menu .navbar ul li a .navbar {
     font-size: 18px;
     padding: 20px;
     color: #fffdfc;
@@ -124,7 +124,7 @@ body {
 
 .header-contentcontainer p {
     color: rgb(255, 255, 255);
-    font-size: 16px;
+    font-size: 21px;
     width: 100%;
     /* Ajusta el ancho del párrafo según sea necesario */
     margin-bottom: 25px;
@@ -165,8 +165,9 @@ body {
 }
 
 .black-class {
-    background: black;
+    background: rgb(23, 23, 23);
     border-bottom: 1px solid white;
+    justify-content: center;
 }
 
 .martin1 {
@@ -216,6 +217,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+    flex-direction: column;
 }
 
 .STMPD {
@@ -252,7 +254,8 @@ ul {
 .copy {
     color: #c0c0c0;
     text-transform: lowercase;
-    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .footer-col {
@@ -301,7 +304,7 @@ ul {
 }
 
 .footer-col .social-links a {
-    display: inline-block;
+    display: list-item;
     height: 40px;
     width: 40px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -333,14 +336,14 @@ ul {
 }
 
 .bodyf {
-    min-height: 30vh;
+    min-height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .menu .navbar ul {
-    display: flex;
+    display: grid;
     justify-content: space-between;
     align-items: center;
     margin: 0;
@@ -366,11 +369,12 @@ form {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     text-align: center;
-    width: 320px;
+    width: 260px;
     position: absolute;
-    top: 60%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 32%);
+    
 }
 
 .input-group {
@@ -459,6 +463,8 @@ input::placeholder {
     display: flex;
     max-width: 1100px;
     margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .onsale {
@@ -550,6 +556,7 @@ input::placeholder {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
+    display: table;
 }
 
 .header,
@@ -598,9 +605,10 @@ input::placeholder {
 .festival-1 img,
 .festival-1 iframe {
     position: relative;
-    display: block;
+    display: inline-grid;
     width: 100%;
     height: 490px;
+    
 }
 
 .text-wrapper {
@@ -625,3 +633,68 @@ input::placeholder {
 .navbar ul li a{
     text-decoration: none;
 }
+
+.navbar-login {
+    display: table-column-group;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+}
+
+.collage {
+    min-height: 100%;
+    width: 100%;
+    outline: 10px solid #505050;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+    gap: 5px;
+}
+
+.collage__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.accordion {
+    background-color: #f2f2f2;
+    width: 80%;
+    padding: 1.5em;
+    margin: 60px auto;
+    max-width: 500px;
+    box-shadow: 0 0 10px -3px rgb(0, 0, 0, .5);
+    border-radius: 6px;
+    border-left: 4px solid #454545 ;
+}
+
+.inputaccordion{
+    display: none;
+}
+
+.accordion__link{
+    display: inline-block;
+    color: #454545;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.accordion__item {
+    display: grid;
+    grid-template-rows: var(--rows, 0fr);
+    transition: .3s grid-template-rows;
+}
+
+.paccordion{
+    overflow: hidden;
+}
+
+.accordion:has(:checked){
+    --rows: 1fr;
+}
+
+
+@media (max-width: 280px) {}
